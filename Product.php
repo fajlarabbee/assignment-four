@@ -23,7 +23,7 @@ class Product
         $detailsTitle = "Product Details";
         $price = $this->getFormattedPrice();
         echo <<<OUTPUT
-{$detailsTitle}
+{$detailsTitle}:
 - ID: {$this->id}
 - Name: {$this->name}
 - Price: {$price}

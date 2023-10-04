@@ -13,20 +13,21 @@ class Product
         $this->price = $price;
     }
 
-    public function getFormattedPrice($currencySymbol = '$'): string
+    public function getFormattedPrice(): string
     {
-        return $currencySymbol . number_format($this->price, 2);
+        return number_format($this->price, 2);
     }
 
     public function showDetails(): void
     {
         $detailsTitle = "Product Details";
+        $currencySymbol = '$';
         $price = $this->getFormattedPrice();
         echo <<<OUTPUT
 {$detailsTitle}:
 - ID: {$this->id}
 - Name: {$this->name}
-- Price: {$price}
+- Price: {$currencySymbol}{$price}
 OUTPUT;
     }
 }
